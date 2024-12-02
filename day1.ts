@@ -48,3 +48,13 @@ export function part2(input: string) {
     return sum + i;
   }, 0);
 }
+
+Deno.bench("part1", async () => {
+  const data = await Deno.readTextFile("./day1.txt");
+  part1(data);
+});
+
+Deno.bench("part2", async () => {
+  const data = await Deno.readTextFile("./day1.txt");
+  part2(data);
+});
