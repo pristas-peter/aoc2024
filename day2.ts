@@ -70,12 +70,14 @@ export function part2(input: string) {
   for (const report of reports) {
     if (isReportSafe(report)) {
       safeReports++;
-      continue
+      continue;
     }
 
-    if (report.some((_, i) =>
+    if (
+      report.some((_, i) =>
         isReportSafe(report.filter((_, index) => index !== i))
-    )) {
+      )
+    ) {
       safeReports++;
     }
   }
